@@ -1,58 +1,13 @@
-let mongoose = require("mongoose")
+let express= require("express")
+const {UserModel} = require("./model/usermodel");
+const userRoute=require("./controllers/userRoute");
 
-const addressSchema=mongoose.Schema({
-    country:{
-        type:String,
-        require:true
-    },
-    state:{
-        type:String,
-        require:true
-    },
-    distrit:{
-        type:String,
-        require:true
+let app=express()
+app.use(express.json())
+const errorMiddleware=require("./middleware/error")
 
-    },
-    pincode:{
-        type:Number,
-        require:true
-    },
-    area:{
-        type:String
-    }
+app.use("/user",userRoute)
 
-})
+app.use(errorMiddleware)
 
-
-const userSchema =mongoose.Schema({
-    name:{
-        type:String,
-        require:true
-    },
-    email:{
-        type:String,
-        require:true
-    },
-    password:{
-        type:String,
-        require:true
-    },
-    role:{
-        type:String,
-        default:"user"
-    },
-    address:{
-        type:addressSchema
-    },
-    isActivated:{
-        type:Boolean,
-        default:false
-    }
-
-})
-
-
-const UserModel =mongoose.model("user",userSchema)
-
-module.exports={UserModel}
+module.exports={app}
