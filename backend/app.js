@@ -1,5 +1,5 @@
 let express= require("express")
-const {UserModel} = require("./model/usermodel");
+const {UserModel} = require("./model/userModel");
 const userRoute=require("./controllers/userRoute");
 
 let app=express()

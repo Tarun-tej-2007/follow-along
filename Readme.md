@@ -41,3 +41,27 @@ components pages router
 ---
 
 This keeps it concise while highlighting key learning points. Let me know if you need any changes! 🚀
+
+## **MILESTONE 6 **
+User Authentication - Password Encryption & Secure Storage of Data
+Overview
+In this task, we are to increase security within user authentication through encrypting the password and storing the user's data securely within the database. We will hash passwords using bcrypt prior to storage so that credentials are secure.
+
+--Steps Taken
+1. Encryption of the Password
+Utilized bcrypt to hash the password of the user on signup.
+Kept the hashed password rather than plaintext within the database.
+Ensured safe authentication by hashing passwords at login and comparing the hashes.
+2. Storing Entire User Information
+Stored necessary user information (e.g., name, email, etc.) captured during registration in the database.
+Ensured passwords were stored in encrypted form at all times.
+Secured the database by ensuring sensitive data was never stored in plain text.
+Technologies Used
+Node.js & Express – Backend framework.
+MongoDB & Mongoose – Database management.
+bcrypt – Password hashing for security.
+--Expected Outcome
+Passwords are hashed securely prior to storage.
+User information is securely saved in the database.
+It is done through encrypted credentials.
+This provides a safe authentication mechanism for the application. ????
